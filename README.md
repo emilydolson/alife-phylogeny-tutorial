@@ -8,6 +8,13 @@ Biologists have developed many sophisticated and powerful phylogeny-based analys
 
 This tutorial will provide an introduction to phylogenies, how to record them in digital systems, and use cases for phylogenetic analyses in an artificial life context. We will open with a quick discussion of prior research enabled by and based on phylogenies in digital evolution systems. We will then survey existing phylogeny software tools and lead interactive tutorials on tracking phylogenies in both traditional and distributed computing environments. Next, we will demonstrate measurements and data visualizations that phylogenetic data enables, including Muller plots, phylogenetic topology metrics, and annotated phylogeny visualizations. Lastly, we will discuss open questions and future directions related to phylogenies in artificial life.
 
+## When & Where
+
+This tutorial session is organized as part of the [2023 Conference on Artificial Life](https://2023.alife.org), held July 24-28 in Sapporo, Japan at Hokkaido University.
+
+Time & room assignment TBD.
+Hybrid attendance options will be provided.
+
 ## Organizers
 
 - [Emily Dolson](https://cse.msu.edu/~dolsonem/), *Assistant Professor*, Michigan State University
