@@ -1,3 +1,7 @@
+---
+title: ALife 2023 Phylogeny Tutorial
+---
+
 # Phylogenies: how and why to track them in artificial life
 
 (A tutorial at ALife 2023)
