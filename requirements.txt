@@ -1,4 +1,5 @@
 black[jupyter]==22.10.0
 hstrat==1.7.4
 isort==5.12.0
-ping3==4.0.4
+ping3==4.0.4  # brings in requirements for pylib.PayloadPinger
+pytest==7.2.2
