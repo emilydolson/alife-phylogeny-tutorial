@@ -63,5 +63,7 @@ class PayloadPinger:
             payload=payload,
         )
 
-    def read(self: "PayloadPinger") -> typing_extensions.Buffer:
+    def read(
+        self: "PayloadPinger",
+    ) -> typing.Optional[typing_extensions.Buffer]:
         return receive_one_ping(sock=self.sock)
