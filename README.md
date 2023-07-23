@@ -25,7 +25,7 @@ Hybrid attendance options will be provided.
 
 - Introduction to what phylogenies are and considerations for using them in artificial life contexts
 - Practical tutorial on measuring phylogenies:
-  - DEAP demo
+  - Brief DEAP demo
   - Code-Along Tutorial on adding phylogeny tracking to your ALife platform using Phylotrackpy/Empirical
   - Tutorial on using hstrat for distributed phylogeny tracking
 - Introduction to measurements, statistics, and data visualizations you can do with phylogenies
