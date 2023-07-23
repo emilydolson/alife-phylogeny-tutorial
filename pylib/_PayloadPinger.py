@@ -49,9 +49,6 @@ class PayloadPinger:
 
         Returns:
             The delay in seconds/milliseconds, False on error and None on timeout.
-
-        Raises:
-            PingError: Any PingError will raise again if `ping3.EXCEPTIONS` is True.
         """
 
         # with sock:
