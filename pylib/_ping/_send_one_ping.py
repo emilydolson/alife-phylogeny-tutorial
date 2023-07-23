@@ -5,13 +5,19 @@ import socket
 import struct
 import time
 
+import typing_extensions
+
 from ._checksum import checksum
 from ._enums import *
 from ._symbolic_constants import *
 
 
 def send_one_ping(
-    sock: socket, dest_addr: str, icmp_id: int, seq: int, payload: str
+    sock: socket,
+    dest_addr: str,
+    icmp_id: int,
+    seq: int,
+    payload: typing_extensions.Buffer,
 ) -> bool:
     """Sends one ping to the given destination.
 
@@ -47,9 +53,7 @@ def send_one_ping(
         icmp_id,
         seq,
     )
-    icmp_payload = (
-        struct.pack(ICMP_TIME_FORMAT, time.time()) + payload.encode()
-    )
+    icmp_payload = struct.pack(ICMP_TIME_FORMAT, time.time()) + payload
     real_checksum = checksum(
         icmp_header + icmp_payload
     )  # Calculates the checksum on the dummy header and the icmp_payload.

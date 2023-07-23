@@ -8,6 +8,8 @@ import socket
 import typing
 import zlib
 
+import typing_extensions
+
 from ._ping import receive_one_ping, send_one_ping
 
 
@@ -33,7 +35,11 @@ class PayloadPinger:
     def __del__(self: "PayloadPinger") -> None:
         self.sock.close
 
-    def send(self: "PayloadPinger", dest_addr: str, payload: str) -> float:
+    def send(
+        self: "PayloadPinger",
+        dest_addr: str,
+        payload: typing_extensions.Buffer,
+    ) -> float:
         """
         Dispatch one ping to destination address.
 
@@ -60,5 +66,5 @@ class PayloadPinger:
             payload=payload,
         )
 
-    def read(self: "PayloadPinger") -> str:
+    def read(self: "PayloadPinger") -> typing_extensions.Buffer:
         return receive_one_ping(sock=self.sock)

@@ -7,12 +7,14 @@ import select
 import socket
 import struct
 
+import typing_extensions
+
 from ._enums import *
 from ._read_icmp_header import read_icmp_header
 from ._symbolic_constants import *
 
 
-def receive_one_ping(sock: socket) -> float:
+def receive_one_ping(sock: socket) -> typing_extensions.Buffer:
     """Receives the ping from the socket.
 
     IP Header (bits): version (8), type of service (8), length (16), id (16), flags (16), time to live (8), protocol (8), checksum (16), source ip (32), destination ip (32).
@@ -89,9 +91,7 @@ def receive_one_ping(sock: socket) -> float:
             if icmp_header["type"] == IcmpType.ECHO_REPLY:
                 # time_sent = struct.unpack(ICMP_TIME_FORMAT, icmp_payload_raw[0:struct.calcsize(ICMP_TIME_FORMAT)])[0]
                 # time_recv - time_sent
-                return icmp_payload_raw[
-                    struct.calcsize(ICMP_TIME_FORMAT) :
-                ].decode()
+                return icmp_payload_raw[struct.calcsize(ICMP_TIME_FORMAT) :]
 
         return None
     return None
