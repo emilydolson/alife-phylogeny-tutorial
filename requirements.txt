@@ -1,8 +1,10 @@
 alifedata-phyloinformatics-convert
 black[jupyter]==22.10.0
 deap
-hstrat==1.7.4
+hstrat==1.8.2
 isort==5.12.0
 ping3==4.0.4  # brings in requirements for pylib.PayloadPinger
 pytest==7.2.2
+typing_extensions==4.7.1
+tqdm==4.64.1
 phylotrackpy

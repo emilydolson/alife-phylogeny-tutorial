@@ -8,6 +8,8 @@ import socket
 import typing
 import zlib
 
+import typing_extensions
+
 from ._ping import receive_one_ping, send_one_ping
 
 
@@ -33,7 +35,11 @@ class PayloadPinger:
     def __del__(self: "PayloadPinger") -> None:
         self.sock.close
 
-    def send(self: "PayloadPinger", dest_addr: str, payload: str) -> float:
+    def send(
+        self: "PayloadPinger",
+        dest_addr: str,
+        payload: typing_extensions.Buffer,
+    ) -> float:
         """
         Dispatch one ping to destination address.
 
@@ -43,9 +49,6 @@ class PayloadPinger:
 
         Returns:
             The delay in seconds/milliseconds, False on error and None on timeout.
-
-        Raises:
-            PingError: Any PingError will raise again if `ping3.EXCEPTIONS` is True.
         """
 
         # with sock:
@@ -60,5 +63,7 @@ class PayloadPinger:
             payload=payload,
         )
 
-    def read(self: "PayloadPinger") -> str:
+    def read(
+        self: "PayloadPinger",
+    ) -> typing.Optional[typing_extensions.Buffer]:
         return receive_one_ping(sock=self.sock)
